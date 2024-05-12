@@ -1,4 +1,4 @@
-# Initial settings
+# Local Setup
 
 ## install fvm
 
@@ -60,10 +60,32 @@ ref: https://github.com/rbenv/ruby-build/discussions/2335
 $ gem install cocoapods
 ```
 
-## Create flutter project
+## Install for gRPC
+
+- Used to generate code for dart from proto files
+
+1. install protobuf
 
 ```shell
-$ fvm flutter create flutter_sample
+$ brew install protobuf
+```
+
+2. install dart & settings protoc_plugin
+
+```shell
+$ brew tap dart-lang/dart
+$ brew install dart
+// check version
+$ dart --version
+// settings
+$ dart pub global activate protoc_plugin
+```
+
+3. add PATH
+
+```shell
+$ vi ~/.bashrc // any
+export PATH="$PATH":"$HOME/.pub-cache/bin"
 ```
 
 # Execute
@@ -75,4 +97,10 @@ When using iOS Simulator
 ```shell
 $ open -a Simulator
 
+```
+
+# memo initial Settings
+
+```shell
+$ fvm flutter create flutter_sample
 ```
